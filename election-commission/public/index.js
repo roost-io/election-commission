@@ -14,10 +14,12 @@ if (window['env']['ecServerEndpoint']) {
 }
 
 function getAllCandidates() {
+  console.log("ecserver:", window.ecServerEndpoint)
   fetch(window.ecServerEndpoint, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
     },
   })
     .then((res) => res.json())
