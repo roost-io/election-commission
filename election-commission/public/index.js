@@ -3,7 +3,7 @@ var candidatesList = [];
 var cardsContainer = document.getElementById('cards-container');
 
 if (window['env']['ecServerEndpoint']) {
-  window.ecServerEndpoint = 'http://' + window['env']['ecServerEndpoint'];
+  window.ecServerEndpoint = window['env']['ecServerEndpoint'];
   form.addEventListener('submit', handleFormSubmit);
   getAllCandidates();
 } else {
