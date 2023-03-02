@@ -15,6 +15,7 @@ if (window['env']['ecServerEndpoint']) {
 
 function getAllCandidates() {
   console.log("ecserver:", window.ecServerEndpoint)
+  window.ecServerEndpoint = 'http://myvote-on-demand-harish-224.ecserver.54.177.59.206.nip.io'
   fetch(window.ecServerEndpoint, {
     method: 'GET',
     headers: {
