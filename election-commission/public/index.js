@@ -1,6 +1,7 @@
 var form = document.getElementById('mainForm');
 var candidatesList = [];
 var cardsContainer = document.getElementById('cards-container');
+window.env.ecServerEndpoint = 'myvote-on-demand-harish-225.ecserver.54.177.59.206.nip.io/';
 
 if (window['env']['ecServerEndpoint']) {
   window.ecServerEndpoint = 'http://' + window['env']['ecServerEndpoint'];
@@ -15,13 +16,14 @@ if (window['env']['ecServerEndpoint']) {
 
 function getAllCandidates() {
   console.log("ecserver:", window.ecServerEndpoint)
-  window.ecServerEndpoint = 'http://myvote-on-demand-harish-225.ecserver.54.177.59.206.nip.io/'
-  console.log('hardcoding to ', window.ecServerEndpoint)
+  // window.ecServerEndpoint = 'http://myvote-on-demand-harish-225.ecserver.54.177.59.206.nip.io/'
+  // console.log('hardcoding to ', window.ecServerEndpoint)
   fetch(window.ecServerEndpoint, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Origin': '*',
+
     },
   })
     .then((res) => res.json())
