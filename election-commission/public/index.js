@@ -21,12 +21,17 @@ function getAllCandidates() {
       'Content-Type': 'application/json',
     },
   })
-    .then((res) => res.json())
     .then((res) => {
+      console.log("response:", res)
+      return res.json()
+    })
+    .then((res) => {
+      console.log("JSON parsed response:", res)
       candidatesList = res.Candidates;
       showAllCandidates(candidatesList);
     })
     .catch((err) => {
+      console.error("json parse reponse error", err)
       cardsContainer.innerHTML =
         '<div class="alert alert-danger" role="alert">' +
         'Error in adding the candidate. Please try again or report this to devs' +
