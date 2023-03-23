@@ -1,0 +1,19 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   annotations:
+#   name: voting-ec
+#   namespace: {{ .Values.namespace }}
+# spec:
+#   ingressClassName: nginx 
+#   rules:
+#   - host: "{{ .Values.namespace }}.{{ .Values.services.electionCommission.serviceName }}.{{ .Values.clusterIP }}.{{ .Values.clusterDomain }}"
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: {{ .Values.services.electionCommission.serviceName }}
+#             port:
+#               number: 80
