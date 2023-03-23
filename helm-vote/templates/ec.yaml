@@ -43,7 +43,11 @@ spec:
     spec:
       containers:
       - name: election-commission
+        {{- if eq .Values.registry "" }}
+        image: '{{- printf "%s:%s" .Values.services.electionCommission.imageName .Values.tag -}}'
+        {{- else }}
         image: '{{- printf "%s/%s:%s" .Values.registry .Values.services.electionCommission.imageName .Values.tag -}}'
+        {{- end }}
         stdin: true
         tty: true
         env:
